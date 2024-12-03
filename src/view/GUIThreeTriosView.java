@@ -8,9 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.BorderFactory;
+import javax.swing.*;
+
 import java.awt.Dimension;
 import java.awt.Color;
 import java.awt.GridLayout;
@@ -88,8 +87,10 @@ public class GUIThreeTriosView implements ThreeTriosView {
     frame.add(rightPanel, BorderLayout.EAST);
     frame.add(middlePanel, BorderLayout.CENTER);
 
-    frame.setResizable(false);
+    frame.setResizable(true);
+    frame.setMinimumSize(new Dimension(300, 100));
     frame.setVisible(true);
+    setTitle("Three Trios");
 
     handPanelMap = new HashMap<>();
 
@@ -395,5 +396,15 @@ public class GUIThreeTriosView implements ThreeTriosView {
               min(255, pClr[1] + 10),
               min(255, pClr[2] + 10)), 5));
     }
+  }
+  public void setVisibility(boolean visible) {
+    frame.setVisible(visible);
+  }
+
+  public void setTitle(String title) {
+    frame.setTitle(title);
+  }
+  public void showMessage(String message) {
+    JOptionPane.showMessageDialog(this.frame, message);
   }
 }
