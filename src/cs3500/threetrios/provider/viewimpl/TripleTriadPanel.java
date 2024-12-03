@@ -13,11 +13,11 @@ import java.util.Optional;
 
 import javax.swing.JPanel;
 
-import cs3500.threetrios.model.Card;
-import cs3500.threetrios.model.PlayerColor;
-import cs3500.threetrios.model.Tile;
-import cs3500.threetrios.model.Direction;
-import cs3500.threetrios.model.ObservationalTriadModel;
+import cs3500.threetrios.provider.model.Card;
+import cs3500.threetrios.provider.model.PlayerColor;
+import cs3500.threetrios.provider.model.Tile;
+import cs3500.threetrios.provider.model.Direction;
+import cs3500.threetrios.provider.model.ObservationalTriadModel;
 
 /**
  * TripleTriadPanel is a JPanel that deals with rendering the cs3500.threetrios.provider.model's current state
