@@ -1,3 +1,5 @@
+package cs3500.threetrios.provider.viewimpl;
+
 import java.awt.event.MouseEvent;
 import java.util.List;
 
@@ -5,9 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.event.MouseInputAdapter;
 
-import cs3500.threetrios.model.Card;
-import cs3500.threetrios.model.ObservationalTriadModel;
-import cs3500.threetrios.model.PlayerColor;
+import cs3500.threetrios.provider.model.Card;
+import cs3500.threetrios.provider.model.ObservationalTriadModel;
+import cs3500.threetrios.provider.model.PlayerColor;
 
 /**
  * Displays the current game state as a graphical user interface.

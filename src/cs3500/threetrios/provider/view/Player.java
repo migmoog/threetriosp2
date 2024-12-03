@@ -1,3 +1,5 @@
+package cs3500.threetrios.provider.view;
+
 import java.util.Optional;
 
 import cs3500.threetrios.model.ObservationalTriadModel;

@@ -1,5 +1,7 @@
-import cs3500.threetrios.model.Card;
-import cs3500.threetrios.model.PlayerColor;
+package cs3500.threetrios.provider.view;
+
+import cs3500.threetrios.provider.model.Card;
+import cs3500.threetrios.provider.model.PlayerColor;
 
 /**
  * Behaviours for a view of a TripleTriad implementation, so that the user can see the game.

@@ -1,4 +1,6 @@
-import cs3500.threetrios.model.PlayerColor;
+package cs3500.threetrios.provider.view;
+
+import cs3500.threetrios.provider.model.PlayerColor;
 
 /**
  * Features interface for the view -- defines callbacks that the view will call,

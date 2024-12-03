@@ -1,3 +1,5 @@
+package cs3500.threetrios.provider.view;
+
 /**
  * Features interface for the cs3500.threetrios.provider.model -- defines callbacks that the cs3500.threetrios.provider.model will call,
  * which concrete classes extending this interface must implement.
