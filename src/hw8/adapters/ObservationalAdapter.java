@@ -1,12 +1,16 @@
 package hw8.adapters;
 
+import java.awt.*;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import cs3500.threetrios.provider.model.Card;
 import cs3500.threetrios.provider.model.ObservationalTriadModel;
 import cs3500.threetrios.provider.model.PlayerColor;
 import cs3500.threetrios.provider.model.Tile;
+import cs3500.threetrios.provider.view.ModelFeatures;
+import model.Cell;
 import model.ReadThreeTrios;
 import model.actor.Actor;
 
@@ -45,17 +49,17 @@ public class ObservationalAdapter implements ObservationalTriadModel {
 
   @Override
   public List<Card> getHand(PlayerColor player) {
-    
+
   }
 
   @Override
   public int getBoardWidth() {
-    return 0;
+    return readThreeTrios.getWidth();
   }
 
   @Override
   public int getBoardHeight() {
-    return 0;
+    return readThreeTrios.getHeight();
   }
 
   @Override
@@ -65,9 +69,16 @@ public class ObservationalAdapter implements ObservationalTriadModel {
 
   @Override
   public PlayerColor getPlayerAt(int row, int col) {
-    return null;
+    Point p = new Point(row, col);
+    Map<Point, Cell> cells = readThreeTrios.getCells();
+    if (!cells.get(p).hasCard()) {
+      return null;
+    }
+    Actor owner = readThreeTrios.whoOwns(cells.get(p).getCard());
+    return owner.getColor().toProvider();
   }
 
+  // All the methods below seem to be related to gameplay and aren't needed by the view
   @Override
   public int getPossibleCardsFlipped(Card card, int row, int col) {
     return 0;

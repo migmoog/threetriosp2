@@ -3,6 +3,8 @@ package cs3500.threetrios.provider.model;
 import java.util.List;
 import java.util.Optional;
 
+import cs3500.threetrios.provider.view.ModelFeatures;
+
 /**
  * Observational behaviours for a cs3500.threetrios.provider.model of TripleTriad. Mutating any of the objects
  * returned by these methods will have no effect on the game.
