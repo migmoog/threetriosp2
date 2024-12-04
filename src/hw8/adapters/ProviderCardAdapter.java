@@ -7,15 +7,13 @@ import cs3500.threetrios.provider.model.Direction;
 import cs3500.threetrios.provider.model.PlayerColor;
 import model.ReadThreeTrios;
 import model.actor.Actor;
-import model.actor.Player;
-import model.card.AttackValue;
 
-public class CardAdapter implements Card {
+public class ProviderCardAdapter implements Card {
   private model.card.Card ourCard;
   private ReadThreeTrios observations;
   private String name;
 
-  public CardAdapter(model.card.Card card, ReadThreeTrios model) {
+  public ProviderCardAdapter(model.card.Card card, ReadThreeTrios model) {
     this.ourCard = card;
     this.observations = model;
     for (int c = card.toString().length()-1; c >= 0; c--) {
@@ -97,6 +95,6 @@ public class CardAdapter implements Card {
 
   @Override
   public Card copy() {
-    return new CardAdapter(ourCard, observations);
+    return new ProviderCardAdapter(ourCard, observations);
   }
 }

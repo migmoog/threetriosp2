@@ -52,4 +52,11 @@ public interface TriadModel extends ObservationalTriadModel {
    *                                  fewer cards than one more than the number of non-hole tiles
    */
   void startGame(List<List<Tile>> board, List<Card> deck, boolean shuffle);
+
+  /**
+   * Adds a features object to send callbacks to when applicable.
+   *
+   * @param features - the features object to add to the listeners list.
+   */
+  void addFeatures(ModelFeatures features);
 }

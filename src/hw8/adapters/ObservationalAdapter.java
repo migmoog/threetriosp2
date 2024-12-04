@@ -1,6 +1,7 @@
 package hw8.adapters;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -39,7 +40,16 @@ public class ObservationalAdapter implements ObservationalTriadModel {
   public List<List<Tile>> getBoard() {
     int width = readThreeTrios.getWidth();
     int height = readThreeTrios.getHeight();
-
+    List<List<Tile>> board = new ArrayList<>();
+    for (int y = 0; y < height; y++) {
+      board.add(new ArrayList<>());
+      for (int x = 0; x < width; x++) {
+        board.get(y).add(new TileAdapter(
+                readThreeTrios.getCells().get(new Point(x, y)),
+                readThreeTrios));
+      }
+    }
+    return board;
   }
 
   @Override
@@ -49,7 +59,15 @@ public class ObservationalAdapter implements ObservationalTriadModel {
 
   @Override
   public List<Card> getHand(PlayerColor player) {
-
+    List<Card> providerDeck = new ArrayList<>();
+    for (Actor p : readThreeTrios.getActors()) {
+      if (p.getColor().toProvider().equals(player)) {
+        for (model.card.Card c : p.getHand()) {
+          providerDeck.add(new ProviderCardAdapter(c, readThreeTrios));
+        }
+      }
+    }
+    return providerDeck;
   }
 
   @Override
@@ -64,7 +82,7 @@ public class ObservationalAdapter implements ObservationalTriadModel {
 
   @Override
   public Tile getTileAt(int row, int col) {
-    return null;
+    return new TileAdapter(readThreeTrios.getCells().get(new Point(col, row)), readThreeTrios);
   }
 
   @Override
@@ -107,10 +125,5 @@ public class ObservationalAdapter implements ObservationalTriadModel {
   @Override
   public int getHandIndexOfCard(Card card) {
     return 0;
-  }
-
-  @Override
-  public void addFeatures(ModelFeatures features) {
-
   }
 }

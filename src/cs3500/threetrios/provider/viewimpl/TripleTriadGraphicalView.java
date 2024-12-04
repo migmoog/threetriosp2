@@ -10,6 +10,8 @@ import javax.swing.event.MouseInputAdapter;
 import cs3500.threetrios.provider.model.Card;
 import cs3500.threetrios.provider.model.ObservationalTriadModel;
 import cs3500.threetrios.provider.model.PlayerColor;
+import cs3500.threetrios.provider.view.GraphicalView;
+import cs3500.threetrios.provider.view.ViewFeatures;
 
 
 /**

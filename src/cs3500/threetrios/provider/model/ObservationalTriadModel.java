@@ -160,11 +160,4 @@ public interface ObservationalTriadModel {
    * @throws IllegalArgumentException if the card does not exist in either player's hand.
    */
   int getHandIndexOfCard(Card card);
-
-  /**
-   * Adds a features object to send callbacks to when applicable.
-   *
-   * @param features - the features object to add to the listeners list.
-   */
-  void addFeatures(ModelFeatures features);
 }

@@ -3,22 +3,26 @@ package hw8.adapters;
 import cs3500.threetrios.provider.model.Card;
 import cs3500.threetrios.provider.model.Tile;
 import model.Cell;
+import model.ReadThreeTrios;
 
 /**
  * Adapter for cells to become tiles compatible with the provider's code.
  */
 public class TileAdapter implements Tile {
   private Cell cell;
-  public TileAdapter(Cell cell) {
+  private ReadThreeTrios observations;
+
+  public TileAdapter(Cell cell, ReadThreeTrios model) {
     this.cell = cell;
+    this.observations = model;
   }
 
   @Override
   public boolean isHole() {
     if (cell == null) {
-      return false;
+      return true;
     }
-    return cell.hasCard();
+    return false;
   }
 
   @Override
@@ -26,16 +30,16 @@ public class TileAdapter implements Tile {
     if (cell == null || !cell.hasCard()) {
       return null;
     }
-    return
+    return new ProviderCardAdapter(cell.getCard(), observations);
   }
 
   @Override
   public void setCard(Card card) {
-
+    cell.placeCard(new OurCardAdapter(card));
   }
 
   @Override
   public Tile copy() {
-    return null;
+    return new TileAdapter(cell, observations);
   }
 }
