@@ -5,7 +5,7 @@ package model.card;
  * Can face North, East, South, or West.</p>
  */
 public enum Direction {
-  NORTH, EAST, SOUTH, WEST, NORTH_EAST, SOUTH_EAST;
+  NORTH, EAST, SOUTH, WEST;
 
   /**
    * Get the direction that faces this one. (i.e. If a north called this, you will get a south)

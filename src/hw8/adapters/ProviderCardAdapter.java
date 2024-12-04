@@ -11,14 +11,10 @@ import model.actor.Actor;
 public class ProviderCardAdapter implements Card {
   private model.card.Card ourCard;
   private ReadThreeTrios observations;
-  private String name;
 
   public ProviderCardAdapter(model.card.Card card, ReadThreeTrios model) {
     this.ourCard = card;
     this.observations = model;
-    for (int c = card.toString().length()-1; c >= 0; c--) {
-
-    }
   }
 
   @Override
@@ -86,6 +82,14 @@ public class ProviderCardAdapter implements Card {
       }
     }
     throw new IllegalArgumentException("Other player not found");
+  }
+
+  @Override
+  public boolean equals(Object other) {
+    if (other instanceof Card) {
+      return ((Card) other).getName().equals(getName());
+    }
+    return false;
   }
 
   @Override

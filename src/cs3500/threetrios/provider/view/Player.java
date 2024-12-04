@@ -2,9 +2,9 @@ package cs3500.threetrios.provider.view;
 
 import java.util.Optional;
 
-import cs3500.threetrios.model.ObservationalTriadModel;
-import cs3500.threetrios.model.PlayerColor;
-import cs3500.threetrios.strategy.Move;
+import cs3500.threetrios.provider.model.ObservationalTriadModel;
+import cs3500.threetrios.provider.model.PlayerColor;
+import cs3500.threetrios.provider.misc.Move;
 
 /**
  * Represents a player for the Triple Triad game. Players make moves and have a color, either

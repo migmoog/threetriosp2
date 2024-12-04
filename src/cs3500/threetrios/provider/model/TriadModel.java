@@ -2,6 +2,8 @@ package cs3500.threetrios.provider.model;
 
 import java.util.List;
 
+import cs3500.threetrios.provider.view.ModelFeatures;
+
 /**
  * Interactive behaviours for a cs3500.threetrios.provider.model of TripleTriad.
  */

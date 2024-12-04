@@ -3,6 +3,9 @@ import java.util.List;
 import model.ThreeTriosGame;
 import model.actor.Actor;
 
+/**
+ * An interface to read
+ */
 public interface ConfigReader {
   /**
    * Reads a grid config and stores the required grid data needed

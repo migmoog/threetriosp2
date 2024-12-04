@@ -1,5 +1,7 @@
 package cs3500.threetrios.provider.view;
 
+import cs3500.threetrios.provider.model.PlayerColor;
+
 /**
  * Features interface for the cs3500.threetrios.provider.model -- defines callbacks that the cs3500.threetrios.provider.model will call,
  * which concrete classes extending this interface must implement.

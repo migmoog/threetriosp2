@@ -1,12 +1,12 @@
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import controller.ThreeTriosController;
+import hw8.adapters.GUIViewAdapter;
 import model.ThreeTrios;
 import model.ThreeTriosGame;
 import model.actor.Actor;
@@ -15,8 +15,9 @@ import model.actor.Player;
 import model.actor.strategies.HighestSpread;
 import model.actor.strategies.PickCorners;
 import view.GUIThreeTriosView;
-import view.SimpleThreeTriosTextView;
 import view.ThreeTriosView;
+import cs3500.threetrios.provider.viewimpl.TripleTriadGraphicalView;
+import hw8.adapters.ObservationalAdapter;
 
 /**
  * Entry point of a game of Three Trios.
@@ -67,14 +68,12 @@ public class Main {
     conf.readActors(players);
     conf.start(model, false);
 
-    for (Actor player : players) {
-      if (player instanceof Player) {
-        viewMap.put(player, new GUIThreeTriosView(model, 720, 720));
-      } else if (player instanceof ComputerPlayer) {
-        viewMap.put(player, new SimpleThreeTriosTextView(model,
-                new InputStreamReader(System.in), System.out));
-      }
+    viewMap.put(players.get(0), new GUIThreeTriosView(model, 720, 720));
+    viewMap.put(players.get(1), new GUIViewAdapter(
+            new TripleTriadGraphicalView(new ObservationalAdapter(model)),
+            model));
 
+    for (Actor player : players) {
       controllerMap.put(player, new ThreeTriosController(player, viewMap.get(player), model));
 
       if (player instanceof ComputerPlayer) {
