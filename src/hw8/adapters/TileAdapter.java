@@ -23,10 +23,10 @@ public class TileAdapter implements Tile {
 
   @Override
   public Card getCard() {
-    if (cell == null) {
+    if (cell == null || !cell.hasCard()) {
       return null;
     }
-
+    return
   }
 
   @Override

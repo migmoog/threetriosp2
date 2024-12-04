@@ -11,6 +11,7 @@ import cs3500.threetrios.provider.model.Card;
 import cs3500.threetrios.provider.model.ObservationalTriadModel;
 import cs3500.threetrios.provider.model.PlayerColor;
 
+
 /**
  * Displays the current game state as a graphical user interface.
  * May be resized and will still work.
