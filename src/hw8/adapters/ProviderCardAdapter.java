@@ -8,10 +8,18 @@ import cs3500.threetrios.provider.model.PlayerColor;
 import model.ReadThreeTrios;
 import model.actor.Actor;
 
+/**
+ * Adapter to make our card interface work with the provider's.
+ */
 public class ProviderCardAdapter implements Card {
   private model.card.Card ourCard;
   private ReadThreeTrios observations;
 
+  /**
+   * Construct the card adapter to work with the provider.
+   * @param card our own card interface to use.
+   * @param model our own model observations to use.
+   */
   public ProviderCardAdapter(model.card.Card card, ReadThreeTrios model) {
     this.ourCard = card;
     this.observations = model;
@@ -74,14 +82,14 @@ public class ProviderCardAdapter implements Card {
 
   private Actor getOtherActor() {
     if (observations.getActors().size() != 2) {
-      throw new IllegalArgumentException("can only swap card owner with 2 players");
+      throw new IllegalStateException("can only swap card owner with 2 players");
     }
     for (Actor a : observations.getActors()) {
       if (!a.equals(getActor())) {
         return a;
       }
     }
-    throw new IllegalArgumentException("Other player not found");
+    throw new IllegalStateException("Other player not found");
   }
 
   @Override
@@ -94,7 +102,8 @@ public class ProviderCardAdapter implements Card {
 
   @Override
   public String getName() {
-    return ourCard.toString();
+    String stringRep = ourCard.toString();
+    return stringRep.split(" ")[0];
   }
 
   @Override

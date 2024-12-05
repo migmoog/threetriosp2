@@ -12,6 +12,11 @@ public class TileAdapter implements Tile {
   private Cell cell;
   private ReadThreeTrios observations;
 
+  /**
+   * Construct a tile adapter to use with the cell.
+   * @param cell the cell to hide inside this tile.
+   * @param model the model to use the observations of
+   */
   public TileAdapter(Cell cell, ReadThreeTrios model) {
     this.cell = cell;
     this.observations = model;
@@ -19,10 +24,7 @@ public class TileAdapter implements Tile {
 
   @Override
   public boolean isHole() {
-    if (cell == null) {
-      return true;
-    }
-    return false;
+    return cell == null;
   }
 
   @Override

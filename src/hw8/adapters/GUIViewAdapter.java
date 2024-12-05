@@ -5,10 +5,18 @@ import cs3500.threetrios.provider.view.GraphicalView;
 import model.ReadThreeTrios;
 import view.ThreeTriosView;
 
+/**
+ * An adapter to make the providers graphical view work with our own.
+ */
 public class GUIViewAdapter implements ThreeTriosView {
   private GraphicalView view;
   private ReadThreeTrios observations;
 
+  /**
+   * Construct a view adapter.
+   * @param view a class that implements our provider's graphical view.
+   * @param model our own model.
+   */
   public GUIViewAdapter(GraphicalView view, ReadThreeTrios model) {
     this.observations = model;
     this.view = view;

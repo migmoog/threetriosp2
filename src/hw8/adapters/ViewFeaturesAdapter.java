@@ -8,10 +8,18 @@ import cs3500.threetrios.provider.view.ViewFeatures;
 import model.ReadThreeTrios;
 import model.actor.Actor;
 
+/**
+ * Adapter to use our model with the provider's "features" interface.
+ */
 public class ViewFeaturesAdapter implements ViewFeatures {
   PlayerActionFeatures features;
   ReadThreeTrios observations;
 
+  /**
+   * Constructs the view features adapter.
+   * @param features the features to add on top of this one.
+   * @param model the model to observe for our features.
+   */
   public ViewFeaturesAdapter(PlayerActionFeatures features, ReadThreeTrios model){
     this.features = features;
     this.observations = model;
