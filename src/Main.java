@@ -7,6 +7,7 @@ import java.util.Map;
 
 import controller.ThreeTriosController;
 import hw8.adapters.GUIViewAdapter;
+import model.ReadThreeTrios;
 import model.ThreeTrios;
 import model.ThreeTriosGame;
 import model.actor.Actor;
@@ -68,10 +69,11 @@ public class Main {
     conf.readActors(players);
     conf.start(model, false);
 
-    viewMap.put(players.get(0), new GUIThreeTriosView(model, 720, 720));
+    /*viewMap.put(players.get(0), new GUIThreeTriosView(model, 720, 720));
     viewMap.put(players.get(1), new GUIViewAdapter(
             new TripleTriadGraphicalView(new ObservationalAdapter(model)),
-            model));
+            model));*/
+    setupViews(false, viewMap, model, players);
 
     for (Actor player : players) {
       controllerMap.put(player, new ThreeTriosController(player, viewMap.get(player), model));
@@ -82,5 +84,19 @@ public class Main {
     }
 
     conf.start(model, false);
+  }
+
+  private static void setupViews(boolean useProvider, Map<Actor, ThreeTriosView> viewMap,
+                                 ReadThreeTrios model, List<Actor> players) {
+    ThreeTriosView view, view2;
+    if (useProvider) {
+      view = new GUIViewAdapter(new TripleTriadGraphicalView(new ObservationalAdapter(model)), model);
+      view2 = new GUIViewAdapter(new TripleTriadGraphicalView(new ObservationalAdapter(model)), model);
+    } else {
+      view = new GUIThreeTriosView(model, 720, 720);
+      view2 = new GUIThreeTriosView(model, 720, 720);
+    }
+    viewMap.put(players.get(0), view);
+    viewMap.put(players.get(1), view2);
   }
 }
