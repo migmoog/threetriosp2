@@ -21,6 +21,11 @@ import model.actor.Actor;
 public class ObservationalAdapter implements ObservationalTriadModel {
   private ReadThreeTrios readThreeTrios;
 
+  /**
+   * Create an adapter for a read-only three-trios model.
+   * @param readThreeTrios Our own Read-only three trios implementation
+   *                       to convert to the provider's
+   */
   public ObservationalAdapter(ReadThreeTrios readThreeTrios) {
     this.readThreeTrios = readThreeTrios;
   }

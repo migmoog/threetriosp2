@@ -4,6 +4,7 @@ import java.io.StringReader;
 import java.util.List;
 import java.util.Random;
 
+import main.TTConfigReader;
 import model.ThreeTrios;
 import model.ThreeTriosGame;
 import model.actor.Actor;

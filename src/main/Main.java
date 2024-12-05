@@ -1,3 +1,5 @@
+package main;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.InputStreamReader;
@@ -38,8 +40,7 @@ public class Main {
    */
   public static void main(String[] args) {
     if (args.length < 2) {
-      System.out.println("Must provide a file paths to grid and deck");
-      return;
+      throw new IllegalStateException("Must provide a file paths to grid and deck");
     }
     List<Actor> players = new ArrayList<>();
     Map<Actor, ThreeTriosView> viewMap = new HashMap<>();
@@ -98,12 +99,6 @@ public class Main {
       }
     }
 
-    /*viewMap.put(players.get(0), new GUIThreeTriosView(model, 720, 720));
-    viewMap.put(players.get(1), new GUIViewAdapter(
-            new TripleTriadGraphicalView(new ObservationalAdapter(model)),
-            model));*/
-    /*setupViews(false, viewMap, model, players);*/
-
     for (Actor player : players) {
       controllerMap.put(player, new ThreeTriosController(player, viewMap.get(player), model));
 
@@ -113,19 +108,5 @@ public class Main {
     }
 
     conf.start(model, false);
-  }
-
-  private static void setupViews(boolean useProvider, Map<Actor, ThreeTriosView> viewMap,
-                                 ReadThreeTrios model, List<Actor> players) {
-    ThreeTriosView view, view2;
-    if (useProvider) {
-      view = new GUIViewAdapter(new TripleTriadGraphicalView(new ObservationalAdapter(model)), model);
-      view2 = new GUIViewAdapter(new TripleTriadGraphicalView(new ObservationalAdapter(model)), model);
-    } else {
-      view = new GUIThreeTriosView(model, 720, 720);
-      view2 = new GUIThreeTriosView(model, 720, 720);
-    }
-    viewMap.put(players.get(0), view);
-    viewMap.put(players.get(1), view2);
   }
 }

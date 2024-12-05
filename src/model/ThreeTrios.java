@@ -250,6 +250,7 @@ public class ThreeTrios implements ThreeTriosGame {
     unstarted = false;
     currentPlayer = 0;
     phase = GamePhase.PLACING;
+    features.beginTurn(actors.get(currentPlayer));
   }
 
   @Override
@@ -257,7 +258,7 @@ public class ThreeTrios implements ThreeTriosGame {
     this.features.add(features);
 
     // notify that the first player's turn has begun
-    this.features.beginTurn(getPlayerTurn());
+    // this.features.beginTurn(getPlayerTurn());
   }
 
   /**

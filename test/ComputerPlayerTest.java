@@ -1,5 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
+import main.ConfigReader;
 
 import java.awt.Point;
 import java.io.FileNotFoundException;

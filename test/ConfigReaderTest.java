@@ -4,6 +4,7 @@ import org.junit.Test;
 import java.io.StringReader;
 import java.util.List;
 
+import main.TTConfigReader;
 import model.ThreeTrios;
 import model.ThreeTriosGame;
 import model.actor.Actor;
