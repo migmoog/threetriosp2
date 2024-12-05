@@ -1,0 +1,9 @@
+Our experience with our provider group was minimal. They wrote well documented code that was understandable
+and easy to work with.
+
+Frankly, what we've learned is that we're happy with our design. 2D arrays are good until you have more
+complex rules for your grid like multiple states of being. We've saved a lot of space both memory and implementation-wise
+by not having to write double for loops to search through our grid.
+
+We also like our structure involving the volatility of our data. The only thing mutatable is the model and
+its respective player objects, nothing involving the cards can affect how the game is played.

@@ -1,0 +1,15 @@
+Our providers have a very well-documented collection of interfaces. They helped us understand how to wrap their
+interfaces with our own implementations to work with their view.
+
+We have qualms with their general design decisions on how cards and the grid work.
+
+To start, they represent their grid as a 2D array. While this is a good general way to think about it, this
+game has a lot of unusable spaces on the grid that would just make for extra wasted memory and resources in
+the game. This is why we initially chose to represent the grid as a map of points linked to Cells, because
+that way no space is wasted and we only keep what we need. If we reach a hole, a map would return null
+rather than searching meticulously through a 2D with an algorithm that would likely have O(n^2) complexity.
+
+Second their design around cards is generally unsafe. Cards keep track of which player owns them, rather than
+players keeping track of who owns their cards (methods like swapPlayer in their Card interface).
+Cards should just be grouped data of attack values and names. If it is volatile data that affects how the game is played,
+then it should be handled by what is contained directly inside the model like our player objects.
