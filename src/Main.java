@@ -1,11 +1,13 @@
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import controller.ThreeTriosController;
+import cs3500.threetrios.provider.view.GraphicalView;
 import hw8.adapters.GUIViewAdapter;
 import model.ReadThreeTrios;
 import model.ThreeTrios;
@@ -16,6 +18,7 @@ import model.actor.Player;
 import model.actor.strategies.HighestSpread;
 import model.actor.strategies.PickCorners;
 import view.GUIThreeTriosView;
+import view.ThreeTriosTextView;
 import view.ThreeTriosView;
 import cs3500.threetrios.provider.viewimpl.TripleTriadGraphicalView;
 import hw8.adapters.ObservationalAdapter;
@@ -50,7 +53,7 @@ public class Main {
     } catch (FileNotFoundException e) {
       System.out.println("Could not find files.");
     }
-    for (int i = 2; i < args.length; i++) {
+    for (int i = 2; i < args.length; i+=2) {
       switch (args[i].toLowerCase()) {
         case "human":
           players.add(new Player());
@@ -69,11 +72,37 @@ public class Main {
     conf.readActors(players);
     conf.start(model, false);
 
+    for (int i = 3; i < args.length; i+=2) {
+      switch (args[i].toLowerCase()) {
+        case "pastelgui":
+          viewMap.put(players.get((i-3)/2),
+                  new GUIThreeTriosView(model, 720, 640));
+          break;
+        case "contrastgui":
+          viewMap.put(players.get((i-3)/2), new GUIViewAdapter(
+                  new TripleTriadGraphicalView(new ObservationalAdapter(model)),
+                  model));
+          break;
+        case "text":
+          viewMap.put(players.get((i-3)/2),
+                  new ThreeTriosTextView(
+                          model, new InputStreamReader(System.in), System.out));
+          break;
+        case "simpletext":
+          viewMap.put(players.get((i-3)/2),
+                  new ThreeTriosTextView(
+                          model, new InputStreamReader(System.in), System.out));
+          break;
+        default:
+          throw new IllegalStateException("invalid type");
+      }
+    }
+
     /*viewMap.put(players.get(0), new GUIThreeTriosView(model, 720, 720));
     viewMap.put(players.get(1), new GUIViewAdapter(
             new TripleTriadGraphicalView(new ObservationalAdapter(model)),
             model));*/
-    setupViews(false, viewMap, model, players);
+    /*setupViews(false, viewMap, model, players);*/
 
     for (Actor player : players) {
       controllerMap.put(player, new ThreeTriosController(player, viewMap.get(player), model));
