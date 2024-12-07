@@ -11,7 +11,6 @@ import model.ReadThreeTrios;
 import model.actor.Actor;
 import model.actor.Move;
 import model.actor.ThreeTriosMove;
-import model.card.GameCard;
 import model.card.Card;
 
 import model.card.Direction;

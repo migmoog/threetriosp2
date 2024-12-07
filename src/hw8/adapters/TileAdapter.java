@@ -14,7 +14,8 @@ public class TileAdapter implements Tile {
 
   /**
    * Construct a tile adapter to use with the cell.
-   * @param cell the cell to hide inside this tile.
+   *
+   * @param cell  the cell to hide inside this tile.
    * @param model the model to use the observations of
    */
   public TileAdapter(Cell cell, ReadThreeTrios model) {

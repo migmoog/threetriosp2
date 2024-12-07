@@ -8,7 +8,6 @@ import java.util.Optional;
 import controller.PlayerActionFeatures;
 import model.ReadThreeTrios;
 import model.actor.strategies.Strategy;
-import model.card.GameCard;
 import model.card.Card;
 
 
@@ -98,7 +97,7 @@ public class ComputerPlayer implements Actor {
 
   @Override
   public void start() {
-    CheckControllerError();
+    checkControllerError();
     // calculate optimal move and store it in this.move
     calculateMove();
 
@@ -115,7 +114,7 @@ public class ComputerPlayer implements Actor {
 
   @Override
   public void selectCard(int handIdx) {
-    CheckControllerError();
+    checkControllerError();
     // controller told computer to select the given card
     this.moveHandIdx = handIdx;
     delegate.selectCard(handIdx);
@@ -137,7 +136,7 @@ public class ComputerPlayer implements Actor {
     this.move = (ThreeTriosMove) out.get();
   }
 
-  private void CheckControllerError() {
+  private void checkControllerError() {
     if (this.controller == null) {
       throw new IllegalStateException("No controller selected for computer player. " +
               "Add one with selectController().");

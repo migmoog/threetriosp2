@@ -17,7 +17,8 @@ public class ProviderCardAdapter implements Card {
 
   /**
    * Construct the card adapter to work with the provider.
-   * @param card our own card interface to use.
+   *
+   * @param card  our own card interface to use.
    * @param model our own model observations to use.
    */
   public ProviderCardAdapter(model.card.Card card, ReadThreeTrios model) {
@@ -38,12 +39,12 @@ public class ProviderCardAdapter implements Card {
 
   @Override
   public void swapPlayer() {
-    if(getPlayer() != null) {
+    if (getPlayer() != null) {
       // if the card is owned on the board
       if (getActor().ownsCard(ourCard)) {
         getActor().loseCard(ourCard);
         getOtherActor().gainCard(ourCard);
-      // if the card is owned in the hand
+        // if the card is owned in the hand
       } else {
         removeFromHand(getActor());
         addToHand(getOtherActor());
@@ -74,6 +75,7 @@ public class ProviderCardAdapter implements Card {
     handDeck.remove(ourCard);
     player.setup(handDeck.size(), handDeck, player.getColor());
   }
+
   private void addToHand(Actor player) {
     List<model.card.Card> handDeck = player.getHand();
     handDeck.add(ourCard);
@@ -98,6 +100,11 @@ public class ProviderCardAdapter implements Card {
       return ((Card) other).getName().equals(getName());
     }
     return false;
+  }
+
+  @Override
+  public int hashCode() {
+    return getName().hashCode();
   }
 
   @Override

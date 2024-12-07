@@ -1,5 +1,4 @@
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 import java.awt.Point;
@@ -9,9 +8,10 @@ import cs3500.threetrios.provider.model.Direction;
 import cs3500.threetrios.provider.model.PlayerColor;
 import hw8.adapters.ProviderCardAdapter;
 import model.Cell;
-import model.card.Card;
-import model.card.GameCard;
 
+/**
+ * Tests for our card adapter.
+ */
 public class CardAdaptationTests extends ThreeTriosSetup {
   private void playOneCard() {
     cfg3Cell.start(threeCellGame, false);

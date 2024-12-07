@@ -16,8 +16,8 @@ public interface Player {
    * Gets the next move from the player, based off implementation.
    *
    * @param model - the current state of the game
-   * @return - The move the player's made (or empty, if the player is human and the program
-   *        needs to wait for view callbacks)
+   * @return - The move the player's made (or empty,
+   *           if the player is human and the program needs to wait for view callbacks)
    */
   Optional<Move> getNextMove(ObservationalTriadModel model);
 

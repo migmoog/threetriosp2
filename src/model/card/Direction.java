@@ -27,6 +27,10 @@ public enum Direction {
     }
   }
 
+  /**
+   * Converts our direction enum into our provider's.
+   * @return same thing pretty much but the type checker is happy.
+   */
   public cs3500.threetrios.provider.model.Direction toProvider() {
     for (cs3500.threetrios.provider.model.Direction providerD :
             cs3500.threetrios.provider.model.Direction.values()) {
@@ -38,6 +42,11 @@ public enum Direction {
     throw new IllegalStateException("Direction can not be converted.");
   }
 
+  /**
+   * Retrieve our own enum from our provider.
+   * @param providerD provider direction
+   * @return our own enum rep.
+   */
   public static Direction fromProvider(cs3500.threetrios.provider.model.Direction providerD) {
     for (Direction d : Direction.values()) {
       if (providerD.name().equals(d.name())) {

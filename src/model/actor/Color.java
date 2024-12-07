@@ -38,13 +38,14 @@ public enum Color {
 
   /**
    * Convert our enum to one workable with the providers.
+   *
    * @return player color representation of this enum
    * @throws IllegalStateException if the value isn't RED or BLUE
    */
   public PlayerColor toProvider() {
     if (this == RED) {
       return PlayerColor.RED;
-    } else if(this == BLUE) {
+    } else if (this == BLUE) {
       return PlayerColor.BLUE;
     }
 

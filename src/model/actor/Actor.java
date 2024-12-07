@@ -69,7 +69,6 @@ public interface Actor {
    * and does not check if the card is in the player's hand
    * [use getHand.contains(card) for that].</p>
    *
-   *
    * @param card card to check
    * @return true if this actor owns the card
    */

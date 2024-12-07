@@ -8,7 +8,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.swing.*;
+import javax.swing.JPanel;
+import javax.swing.JFrame;
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 
 import java.awt.Dimension;
 import java.awt.Color;
@@ -27,7 +30,6 @@ import controller.PlayerActionFeatures;
 import model.Cell;
 import model.ReadThreeTrios;
 import model.actor.Actor;
-import model.card.AttackValue;
 import model.card.Card;
 import model.card.Direction;
 
@@ -397,6 +399,7 @@ public class GUIThreeTriosView implements ThreeTriosView {
               min(255, pClr[2] + 10)), 5));
     }
   }
+
   public void setVisibility(boolean visible) {
     frame.setVisible(visible);
   }
@@ -404,6 +407,7 @@ public class GUIThreeTriosView implements ThreeTriosView {
   public void setTitle(String title) {
     frame.setTitle(title);
   }
+
   public void showMessage(String message) {
     JOptionPane.showMessageDialog(this.frame, message);
   }

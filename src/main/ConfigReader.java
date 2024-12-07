@@ -6,7 +6,7 @@ import model.ThreeTriosGame;
 import model.actor.Actor;
 
 /**
- * An interface to read
+ * An interface to read config files to start a model.
  */
 public interface ConfigReader {
   /**

@@ -1,6 +1,6 @@
 package hw8.adapters;
 
-import java.awt.*;
+import java.awt.Point;
 
 import controller.PlayerActionFeatures;
 import cs3500.threetrios.provider.model.PlayerColor;
@@ -17,10 +17,11 @@ public class ViewFeaturesAdapter implements ViewFeatures {
 
   /**
    * Constructs the view features adapter.
+   *
    * @param features the features to add on top of this one.
-   * @param model the model to observe for our features.
+   * @param model    the model to observe for our features.
    */
-  public ViewFeaturesAdapter(PlayerActionFeatures features, ReadThreeTrios model){
+  public ViewFeaturesAdapter(PlayerActionFeatures features, ReadThreeTrios model) {
     this.features = features;
     this.observations = model;
   }

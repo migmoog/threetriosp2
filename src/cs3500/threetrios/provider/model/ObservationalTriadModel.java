@@ -3,11 +3,9 @@ package cs3500.threetrios.provider.model;
 import java.util.List;
 import java.util.Optional;
 
-import cs3500.threetrios.provider.view.ModelFeatures;
-
 /**
- * Observational behaviours for a cs3500.threetrios.provider.model of TripleTriad. Mutating any of the objects
- * returned by these methods will have no effect on the game.
+ * Observational behaviours for a cs3500.threetrios.provider.model of TripleTriad.
+ * Mutating any of the objects returned by these methods will have no effect on the game.
  */
 public interface ObservationalTriadModel {
 
@@ -78,7 +76,7 @@ public interface ObservationalTriadModel {
    * @param row - the row of the tile to copy
    * @param col - the column of the tile to copy
    * @return - a copy of the tile at row, col.
-   * @throws IllegalStateException if the game hasn't started.
+   * @throws IllegalStateException    if the game hasn't started.
    * @throws IllegalArgumentException if the row or column are out of bounds.
    */
   Tile getTileAt(int row, int col);
@@ -90,7 +88,7 @@ public interface ObservationalTriadModel {
    * @param row - the row of the tile to check
    * @param col - the column of the tile to check
    * @return - the player that owns the card at the given row or column.
-   * @throws IllegalStateException if the game hasn't started.
+   * @throws IllegalStateException    if the game hasn't started.
    * @throws IllegalArgumentException if the row or column are out of bounds.
    */
   PlayerColor getPlayerAt(int row, int col);
@@ -100,23 +98,23 @@ public interface ObservationalTriadModel {
    * to the supplied coordinates.
    *
    * @param card - card to simulate play
-   * @param row - destination row
-   * @param col - destination column
+   * @param row  - destination row
+   * @param col  - destination column
    * @return - the number of cards flipped if this play were to occur.
-   * @throws IllegalStateException if the game has started or is over.
+   * @throws IllegalStateException    if the game has started or is over.
    * @throws IllegalArgumentException if card is null or row, col out of bounds.
    */
   int getPossibleCardsFlipped(Card card, int row, int col);
 
   /**
-   * Returns a copy of the current cs3500.threetrios.provider.model with a particular move having been made.
+   * Returns a copy of the current model with a particular move having been made.
    * Modifying this copy will not modify the original object.
    *
    * @param card - card to play
-   * @param row - destination row
-   * @param col - destination column
+   * @param row  - destination row
+   * @param col  - destination column
    * @return - a copy of the current cs3500.threetrios.provider.model with the move made.
-   * @throws IllegalStateException if the game is over or hasn't started.
+   * @throws IllegalStateException    if the game is over or hasn't started.
    * @throws IllegalArgumentException if card is null or row, col out of bounds.
    */
   ObservationalTriadModel simulateMove(Card card, int row, int col);
@@ -126,7 +124,7 @@ public interface ObservationalTriadModel {
    *
    * @param player - the player to check the score of
    * @return - the score of that player.
-   * @throws IllegalStateException if game hasn't started.
+   * @throws IllegalStateException    if game hasn't started.
    * @throws IllegalArgumentException if player is null.
    */
   int getPlayerScore(PlayerColor player);
@@ -134,10 +132,10 @@ public interface ObservationalTriadModel {
   /**
    * Checks whether the given move of a specific player is a legal move to play.
    *
-   * @param row the row to play to
-   * @param col the column to play to
+   * @param row     the row to play to
+   * @param col     the column to play to
    * @param handIdx the handIdx of the card to play
-   * @param player the player to play for
+   * @param player  the player to play for
    * @return true if the move is valid, and false otherwise
    */
   boolean checkValidMove(int row, int col, int handIdx, PlayerColor player);

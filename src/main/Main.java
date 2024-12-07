@@ -9,9 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 import controller.ThreeTriosController;
-import cs3500.threetrios.provider.view.GraphicalView;
 import hw8.adapters.GUIViewAdapter;
-import model.ReadThreeTrios;
 import model.ThreeTrios;
 import model.ThreeTriosGame;
 import model.actor.Actor;
@@ -54,7 +52,8 @@ public class Main {
     } catch (FileNotFoundException e) {
       System.out.println("Could not find files.");
     }
-    for (int i = 2; i < args.length; i+=2) {
+
+    for (int i = 2; i < args.length; i += 2) {
       switch (args[i].toLowerCase()) {
         case "human":
           players.add(new Player());
@@ -73,24 +72,24 @@ public class Main {
     conf.readActors(players);
     conf.start(model, false);
 
-    for (int i = 3; i < args.length; i+=2) {
+    for (int i = 3; i < args.length; i += 2) {
       switch (args[i].toLowerCase()) {
         case "pastelgui":
-          viewMap.put(players.get((i-3)/2),
+          viewMap.put(players.get((i - 3) / 2),
                   new GUIThreeTriosView(model, 720, 640));
           break;
         case "contrastgui":
-          viewMap.put(players.get((i-3)/2), new GUIViewAdapter(
+          viewMap.put(players.get((i - 3) / 2), new GUIViewAdapter(
                   new TripleTriadGraphicalView(new ObservationalAdapter(model)),
                   model));
           break;
         case "text":
-          viewMap.put(players.get((i-3)/2),
+          viewMap.put(players.get((i - 3) / 2),
                   new ThreeTriosTextView(
                           model, new InputStreamReader(System.in), System.out));
           break;
         case "simpletext":
-          viewMap.put(players.get((i-3)/2),
+          viewMap.put(players.get((i - 3) / 2),
                   new ThreeTriosTextView(
                           model, new InputStreamReader(System.in), System.out));
           break;

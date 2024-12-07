@@ -11,7 +11,7 @@ public interface ViewFeatures {
   /**
    * Callback for when a card from one of the player's hands is selected.
    *
-   * @param index - index of the card in the hand
+   * @param index  - index of the card in the hand
    * @param player - player that owns the hand
    */
   void handCardSelected(int index, PlayerColor player);

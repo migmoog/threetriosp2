@@ -14,8 +14,8 @@ public class Move {
    * Row and column are 0-indexed, starting at the top left of the board.
    *
    * @param index - index of the card in the hand.
-   * @param row - row of the space to be placed in.
-   * @param col - column of the space to be placed in.
+   * @param row   - row of the space to be placed in.
+   * @param col   - column of the space to be placed in.
    */
   public Move(int index, int row, int col) {
     this.handIndex = index;

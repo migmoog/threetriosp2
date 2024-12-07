@@ -1,6 +1,6 @@
 package hw8.adapters;
 
-import java.awt.*;
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -10,7 +10,6 @@ import cs3500.threetrios.provider.model.Card;
 import cs3500.threetrios.provider.model.ObservationalTriadModel;
 import cs3500.threetrios.provider.model.PlayerColor;
 import cs3500.threetrios.provider.model.Tile;
-import cs3500.threetrios.provider.view.ModelFeatures;
 import model.Cell;
 import model.ReadThreeTrios;
 import model.actor.Actor;
@@ -23,6 +22,7 @@ public class ObservationalAdapter implements ObservationalTriadModel {
 
   /**
    * Create an adapter for a read-only three-trios model.
+   *
    * @param readThreeTrios Our own Read-only three trios implementation
    *                       to convert to the provider's
    */

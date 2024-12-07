@@ -12,7 +12,6 @@ import controller.ModelStatusListeners;
 import model.actor.Actor;
 import model.actor.Color;
 import model.card.Card;
-import model.card.GameCard;
 import model.card.Direction;
 import model.rules.BattleRule;
 import model.rules.GreaterRule;
@@ -237,8 +236,8 @@ public class ThreeTrios implements ThreeTriosGame {
     List<Color> colors = List.of(
             Color.RED, Color.BLUE, Color.GREEN, Color.ORANGE, Color.YELLOW, Color.PURPLE);
     if (actors.size() > colors.size()) {
-      throw new IllegalArgumentException("Not enough colors listed. There are "+
-              colors.size()+" colors for "+actors.size()+" actors.");
+      throw new IllegalArgumentException("Not enough colors listed. There are " +
+              colors.size() + " colors for " + actors.size() + " actors.");
     }
     Color[] colorArray = new Color[actors.size()];
     for (int i = 0; i < actors.size(); i++) {

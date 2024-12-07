@@ -14,7 +14,8 @@ public class GUIViewAdapter implements ThreeTriosView {
 
   /**
    * Construct a view adapter.
-   * @param view a class that implements our provider's graphical view.
+   *
+   * @param view  a class that implements our provider's graphical view.
    * @param model our own model.
    */
   public GUIViewAdapter(GraphicalView view, ReadThreeTrios model) {

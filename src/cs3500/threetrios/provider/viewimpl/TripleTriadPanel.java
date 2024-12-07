@@ -20,8 +20,8 @@ import cs3500.threetrios.provider.model.Direction;
 import cs3500.threetrios.provider.model.ObservationalTriadModel;
 
 /**
- * TripleTriadPanel is a JPanel that deals with rendering the cs3500.threetrios.provider.model's current state
- * into a Swing GUI. Using the supplied cs3500.threetrios.provider.model and the window's bounds, it dynamically
+ * TripleTriadPanel is a JPanel that deals with rendering the model's current state
+ * into a Swing GUI. Using the supplied model and the window's bounds, it dynamically
  * displays the current game state.
  */
 public class TripleTriadPanel extends JPanel {

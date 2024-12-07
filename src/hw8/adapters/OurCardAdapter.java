@@ -1,11 +1,6 @@
 package hw8.adapters;
 
-import java.util.List;
-
 import cs3500.threetrios.provider.model.Card;
-import cs3500.threetrios.provider.model.PlayerColor;
-import model.ReadThreeTrios;
-import model.actor.Actor;
 import model.card.AttackValue;
 import cs3500.threetrios.provider.model.Direction;
 
@@ -17,6 +12,7 @@ public class OurCardAdapter implements model.card.Card {
 
   /**
    * Construct a card adapter.
+   *
    * @param providerCard the provider's card to use.
    */
   public OurCardAdapter(Card providerCard) {

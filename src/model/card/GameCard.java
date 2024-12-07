@@ -41,6 +41,7 @@ public class GameCard implements Card {
     return name + " " + valrow.toString().trim();
   }
 
+  @Override
   public int getScore() {
     int score = 0;
     for (AttackValue val : values.values()) {

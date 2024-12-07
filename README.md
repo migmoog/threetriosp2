@@ -17,6 +17,8 @@
 
 ---
 
+We were able to get our entire model to work with the provider's code.
+
 ## Changes from Provider Code:
 
 - Only modified a few imports to ensure all packages were found properly

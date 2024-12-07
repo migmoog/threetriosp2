@@ -17,7 +17,7 @@ public interface GraphicalView {
    * Updates the output of the view such that it reflects
    * the cs3500.threetrios.provider.model's current state.
    *
-   * @param myPlayer - the player that this view belongs to
+   * @param myPlayer   - the player that this view belongs to
    * @param isGameOver - whether the game is over
    */
   void update(PlayerColor myPlayer, boolean isGameOver);

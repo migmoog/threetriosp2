@@ -7,7 +7,7 @@ package cs3500.threetrios.provider.model;
 public interface Card {
 
   /**
-   * Takes in a cs3500.threetrios.provider.model.Direction and returns the card's damage number for that direction.
+   * Takes in a Direction and returns the card's damage number for that direction.
    *
    * @param dir - direction to get damage for
    * @return - damage
